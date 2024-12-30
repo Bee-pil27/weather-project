@@ -44,17 +44,6 @@ function formatDate(date) {
   return `${day} ${hours}:${minutes}`;
 }
 
-<div class="weather-forecast-day">
-  <div class="weather-forecast-date">Tue</div>
-  <div class="weather-forecast-icon">⛅</div>
-  <div class="weather-forecast-temperatures"></div>
-  <div class="weather-forecast-temperature">
-    <strong> 15°</strong>
-  </div>
-  <div class="weather-forecast-temperature">9°</div>
-</div>;
-
-
 function searchCity(city) {
   let apiKey = "3f2d7e74630cb3758ac3e06t5aof40f8";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -68,16 +57,30 @@ function handleSearchSubmit(event) {
   searchCity(searchInput.value);
 }
 
-function displayForecast(){
-  let days=["Tue", "Wed","Thu", "Fri","Sat"];
-  let forecastHtml="";
+function displayForecast() {
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
 
-  days.forEach(function (day) { 
+  days.forEach(function (day) {
     forecastHtml =
-    forecastHtml+
-
-    ``
+      forecastHtml +
+      `
+      <div class="weather-forecast-day">
+  <div class="weather-forecast-date">${day}</div>
+  <div class="weather-forecast-icon">⛅</div>
+  <div class="weather-forecast-temperatures">
+  <div class="weather-forecast-temperature">
+    <strong> 15°</strong>
+  </div>
+  <div class="weather-forecast-temperature">9°</div>
+</div>
+</div>
+    `;
   });
+
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHtml;
+}
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
