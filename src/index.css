@@ -61,6 +61,7 @@ main {
   font-size: 66x;
   font-weight: bold;
   display: flex;
+  border: purple;
 }
 
 .weather-app-icon {
