@@ -1,7 +1,5 @@
 body {
-  background-image: url("https://images.pexels.com/photos/1539116/pexels-photo-1539116.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: whitesmoke;
   font-family: "Roboto", serif;
 }
 
@@ -12,6 +10,11 @@ body {
   box-shadow: 0 30px 50px rgba(65, 50, 100, 0, 08);
   border-radius: 16px;
   padding: 30px;
+}
+
+.weather-icon {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .search-form-input {
@@ -66,10 +69,6 @@ main {
   border: purple;
 }
 
-.weather-app-icon {
-  width: 88px;
-  height: 88px;
-}
 .weather-forecast {
   display: flex;
   justify-content: space-around;
