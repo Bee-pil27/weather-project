@@ -104,5 +104,5 @@ function displayForecast(response) {
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-searchCity("City");
-getForecast("City");
+searchCity("Miami");
+getForecast("Miami");
